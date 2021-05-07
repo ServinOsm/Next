@@ -17,7 +17,7 @@ export default function Home({ articles }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const articles = await Client().query(Prismic.Predicates.at('document.type', 'test2'))
 
   return {
